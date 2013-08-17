@@ -1,0 +1,2 @@
+# Prevent ISO files from being tracked.
+iso/*.iso
