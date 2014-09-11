@@ -1,3 +1,7 @@
 # Prevent ISO files and boxes from being tracked.
 iso/*.iso
 *.box
+
+# Vagrant stuff.
+.vagrant/
+Vagrantfile
