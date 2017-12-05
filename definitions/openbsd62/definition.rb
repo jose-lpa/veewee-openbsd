@@ -82,6 +82,7 @@ Veewee::Session.declare({
     "vagrant.sh",
     "ruby.sh",
     "puppet.sh",
+    "ansible.sh",
     "chef.sh"
   ],
   :postinstall_timeout => "10000"
