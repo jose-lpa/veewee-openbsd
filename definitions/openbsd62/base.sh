@@ -7,6 +7,9 @@ echo " "
 echo " export PKG_PATH=${MIRROR}/pub/OpenBSD/`uname -r`/packages/`arch -s`/ " >> /root/.profile
 echo " export PKG_PATH=${MIRROR}/pub/OpenBSD/`uname -r`/packages/`arch -s`/ ">> /home/vagrant/.profile
 
+# needed by /etc/rc.firsttime to exec "syspatch -c"
+echo ${MIRROR} > /etc/installurl
+
 # install wget/curl/bash/vim and its dependencies
 echo " "
 echo " Installing needed packages "
@@ -39,8 +42,6 @@ echo "permit nopass keepenv root" >> /etc/doas.conf
 doas -C /etc/doas.conf
 chown root:wheel /etc/doas.conf
 chmod 0644 /etc/doas.conf
-
-[[ -x  /etc/rc.d/sendmail ]] && /etc/rc.d/sendmail stop
 
 # install the ports system for who wants to use it
 echo " "
