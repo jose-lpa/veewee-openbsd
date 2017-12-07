@@ -34,8 +34,8 @@ echo "%wheel        ALL=(ALL) NOPASSWD: SETENV: ALL" >> /etc/sudoers
 echo " "
 echo " Setting up doas to work with vagrant "
 echo " "
-echo "permit nopass keepenv { ENV PS1 SSH_AUTH_SOCK } :wheel" >> /etc/doas.conf
-echo "permit nopass keepenv root as root" >> /etc/doas.conf
+echo "permit nopass :wheel" >> /etc/doas.conf
+echo "permit nopass keepenv root" >> /etc/doas.conf
 chown root:wheel /etc/doas.conf
 chmod 0644 /etc/doas.conf
 
