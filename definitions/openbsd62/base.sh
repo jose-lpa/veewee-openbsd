@@ -1,15 +1,17 @@
 # set pkg path for users
+#MIRROR="http://ftp3.usa.openbsd.org"
+MIRROR="http://ftp.icm.edu.pl"
 echo " "
 echo " Setting PKG_PATH for users "
 echo " "
-echo " export PKG_PATH=http://ftp3.usa.openbsd.org/pub/OpenBSD/`uname -r`/packages/`arch -s`/ " >> /root/.profile
-echo " export PKG_PATH=http://ftp3.usa.openbsd.org/pub/OpenBSD/`uname -r`/packages/`arch -s`/ ">> /home/vagrant/.profile
+echo " export PKG_PATH=${MIRROR}/pub/OpenBSD/`uname -r`/packages/`arch -s`/ " >> /root/.profile
+echo " export PKG_PATH=${MIRROR}/pub/OpenBSD/`uname -r`/packages/`arch -s`/ ">> /home/vagrant/.profile
 
 # install wget/curl/bash/vim and its dependencies
 echo " "
 echo " Installing needed packages "
 echo " "
-export PKG_PATH=http://ftp3.usa.openbsd.org/pub/OpenBSD/`uname -r`/packages/`arch -s`/
+export PKG_PATH=${MIRROR}/pub/OpenBSD/`uname -r`/packages/`arch -s`/
 pkg_add wget curl bash vim--no_x11 rsync--iconv bzip2 ngrep sudo-1.8.21.2-gettext pkglocatedb 
 
 # giving root & vagrant bash as shell
@@ -44,7 +46,7 @@ echo " "
 echo " Installing the ports system ! "
 echo " "
 cd /tmp
-wget http://ftp3.usa.openbsd.org/pub/OpenBSD/`uname -r`/ports.tar.gz
+wget ${MIRROR}/pub/OpenBSD/`uname -r`/ports.tar.gz
 wget http://ftp.openbsd.org/pub/OpenBSD/$(uname -r)/SHA256.sig
 signify -Cp /etc/signify/openbsd-$(uname -r | cut -c 1,3)-base.pub -x SHA256.sig ports.tar.gz
 cd /usr
