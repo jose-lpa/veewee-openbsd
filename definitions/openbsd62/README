@@ -1,10 +1,11 @@
 The boxes come with:
 - ports system already installed
-- puppet and chef
+- ansible, puppet and chef
 - check the postinstall.sh script to see what is built in the box on top of the default install
 - add/remove to your heart's content
 
 a. Easy to use boxes for experimentation
+- with ansible
 - with puppet
 - with chef
 - with whatever else you can dream of :)
