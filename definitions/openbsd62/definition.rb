@@ -56,7 +56,7 @@ Veewee::Session.declare({
 # Pathname to sets ? [6.2/amd64]
    '<Enter>',
 # Remove games and X
-   '-* bsd* base*<Enter>',
+   '-* bsd* base* comp* man*<Enter>',
    '<Wait>',
 # Done installing ?
    'done<Enter>',
