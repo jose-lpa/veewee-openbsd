@@ -8,7 +8,7 @@ echo " export PKG_PATH=${MIRROR}/pub/OpenBSD/`uname -r`/packages/`arch -s`/ " >>
 echo " export PKG_PATH=${MIRROR}/pub/OpenBSD/`uname -r`/packages/`arch -s`/ ">> /home/vagrant/.profile
 
 # needed by /etc/rc.firsttime to exec "syspatch -c"
-echo ${MIRROR} > /etc/installurl
+echo ${MIRROR}/pub/OpenBSD > /etc/installurl
 
 # install wget/curl/bash/vim and its dependencies
 echo " "
