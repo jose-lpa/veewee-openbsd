@@ -15,4 +15,4 @@ sha=$(echo $url |cut -f4 -d' ')
 iso=$(echo $url |cut -f2 -d' ' | tr -d \(,\))
 
 sed -i ''s/iso_sha256.*$/iso_sha256\ =\>\ \"$sha\",/'' definitions/"$ver"/definition.rb
-sed -i -e ''s/install62.iso/$iso/g'' build_$ver definitions/$ver/* -e ''s/6\.2/$ver/g'' 
+sed -i -e ''s/install62.iso/$iso/g'' -e ''s/6\.2/$ver/g'' build_$ver definitions/$ver/* 
