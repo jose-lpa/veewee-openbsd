@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+bundle install
+
+bundle exec veewee vbox build 'openbsd62' --force --auto --nogui 
+bundle exec veewee vbox validate 'openbsd62' 
+
+bundle exec veewee vbox export 'openbsd62' 
+
