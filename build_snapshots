@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+bundle install
+
+bundle exec veewee vbox build 'snapshots' --force --auto --nogui 
+bundle exec veewee vbox validate 'snapshots' 
+
+bundle exec veewee vbox export 'snapshots' 
+
